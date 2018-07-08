@@ -45,6 +45,8 @@ recognition.onresult = function(event) {
 
   diagnostic.textContent = 'Result received: ' + color + '.';
   bg.style.backgroundColor = color;
+  var msg = new SpeechSynthesisUtterance('Hello World');
+  window.speechSynthesis.speak('The background color is '+msg);
   console.log('Confidence: ' + event.results[0][0].confidence);
 }
 
